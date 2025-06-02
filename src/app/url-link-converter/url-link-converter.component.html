@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>URLリンクコンバーター</h2>
+
+    <div class="sample-texts">
+        <h3>サンプルテキスト:</h3>
+        <div class="sample-buttons">
+            <button *ngFor="let sample of sampleTexts" (click)="selectSampleText(sample.text)" class="sample-button">
+                {{ sample.title }}
+            </button>
+        </div>
+    </div>
+
+    <div class="input-section">
+        <textarea [(ngModel)]="inputText" (input)="convertUrls()" placeholder="テキストを入力してください..." rows="5"
+            class="text-input"></textarea>
+    </div>
+
+    <div class="output-section">
+        <h3>変換結果:</h3>
+        <div class="converted-text" [innerHTML]="convertedText"></div>
+    </div>
+</div>
