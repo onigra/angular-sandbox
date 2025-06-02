@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { sampleTexts } from './sample-texts';
 
 @Component({
   selector: 'app-url-link-converter',
@@ -13,21 +14,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class UrlLinkConverterComponent {
   inputText: string = '';
   convertedText: SafeHtml = '';
-
-  sampleTexts = [
-    {
-      title: '基本的なURL',
-      text: '私のブログは https://example.com です。'
-    },
-    {
-      title: '複数のURL',
-      text: 'おすすめのサイト：\nhttps://google.com\nhttps://github.com\nhttps://angular.io'
-    },
-    {
-      title: 'URLを含む文章',
-      text: 'Angularの公式ドキュメントは https://angular.io/docs で確認できます。また、GitHubのリポジトリは https://github.com/angular/angular にあります。'
-    }
-  ];
+  sampleTexts = sampleTexts;
 
   constructor(private sanitizer: DomSanitizer) { }
 
