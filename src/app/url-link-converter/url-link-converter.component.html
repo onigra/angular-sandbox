@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>URLリンクコンバーター</h2>
+
+    <div class="input-section">
+        <textarea [(ngModel)]="inputText" (input)="convertUrls()" placeholder="テキストを入力してください..." rows="5"
+            class="text-input"></textarea>
+    </div>
+
+    <div class="output-section">
+        <h3>変換結果:</h3>
+        <div class="converted-text" [innerHTML]="convertedText"></div>
+    </div>
+</div>
